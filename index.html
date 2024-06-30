@@ -30,49 +30,70 @@
             height: 150px;
             border-radius: 50%;
             margin-bottom: 1rem;
+            object-fit: cover;
+            border: 3px solid #3c3c3c;
         }
         h1 {
             margin-bottom: 1rem;
         }
         .button {
-            display: block;
-            width: 100%;
+            display: inline-block;
+            width: calc(100% - 20px);
             padding: 0.8rem;
             margin: 0.5rem 0;
             background-color: #2c2c2c;
             color: #e0e0e0;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid #3c3c3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .button:hover {
             background-color: #3c3c3c;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .social-buttons {
+        .social-buttons, .tool-buttons {
             margin-top: 1rem;
         }
-        .tool-buttons {
-            margin-top: 1rem;
+        .social-buttons .button {
+            background-color: #1e1e1e;
+            border-color: #4a4a4a;
+        }
+        .social-buttons .button:hover {
+            background-color: #2a2a2a;
+            border-color: #5a5a5a;
+        }
+        .tool-buttons .button {
+            background-color: #2a2a2a;
+            border-color: #4a4a4a;
+        }
+        .tool-buttons .button:hover {
+            background-color: #3a3a3a;
+            border-color: #5a5a5a;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="https://instagram.ftpe4-1.fna.fbcdn.net/v/t51.2885-19/166677476_1185405708580795_843021909920680210_n.jpg?_nc_ht=instagram.ftpe4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=B2CgcMBBvqcQ7kNvgG6M46u&edm=AEhyXUkBAAAA&ccb=7-5&oh=00_AYAurCD6wbkrqJJ8LepXWw3k41XNne_6d1Cbk9IEsJfhzg&oe=6686B6B1&_nc_sid=8f1549" alt="" class="avatar">
+        <img src="/api/placeholder/150/150" alt="我的頭像" class="avatar">
         <h1>歡迎來到我的個人網站</h1>
         <p>這裡是我分享想法和作品的地方</p>
         
         <div class="social-buttons">
             <a href="#" class="button">Facebook</a>
-            <a href="https://www.instagram.com/zun_guili/" class="button">Instagram</a>
+            <a href="#" class="button">Instagram</a>
             <a href="#" class="button">LinkedIn</a>
-           // <a href="#" class="button">Twitter</a>
+            <a href="#" class="button">Twitter</a>
         </div>
         
         <div class="tool-buttons">
             <a href="#" class="button">主題生成器</a>
-            //<a href="#" class="button">計算器工具</a>
-            //<a href="#" class="button">待辦事項清單</a>
+            <a href="#" class="button">計算器工具</a>
+            <a href="#" class="button">待辦事項清單</a>
         </div>
     </div>
 </body>
