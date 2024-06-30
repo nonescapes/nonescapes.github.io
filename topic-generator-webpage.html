@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        body {
+            font-family: 'Consolas', monospace;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl mb-4">主題</h1>
+        <div class="space-y-4">
+            <input id="inputA" type="text" class="w-full p-2 border rounded" placeholder="Input A">
+            <input id="inputB" type="text" class="w-full p-2 border rounded" placeholder="Input B">
+            <input id="inputC" type="text" class="w-full p-2 border rounded" placeholder="Input C">
+            <button id="generateButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Say</button>
+        </div>
+        <textarea id="output" class="w-full h-64 mt-4 p-2 border rounded" readonly></textarea>
+    </div>
+
+    <script>
+        document.getElementById('generateButton').addEventListener('click', function() {
+            const inputA = document.getElementById('inputA').value.split(',').filter(Boolean);
+            const inputB = document.getElementById('inputB').value.split(',').filter(Boolean);
+            const inputC = document.getElementById('inputC').value.split(',').filter(Boolean);
+            
+            const output = document.getElementById('output');
+            output.value = '';
+
+            for (let a of inputA) {
+                if (inputB.length === 0) {
+                    output.value += a + ',\n';
+                    continue;
+                }
+                for (let b of inputB) {
+                    if (inputC.length === 0) {
+                        output.value += a + b + ',\n';
+                        continue;
+                    }
+                    for (let c of inputC) {
+                        output.value += a + b + c + ',\n';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
